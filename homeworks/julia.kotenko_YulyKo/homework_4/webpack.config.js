@@ -1,4 +1,4 @@
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const path = require('path');
 
 const config = {
@@ -9,4 +9,7 @@ const config = {
     },
 };
 
-module.exports = config;
+module.exports = {
+    mode: 'development'
+  };
+p
