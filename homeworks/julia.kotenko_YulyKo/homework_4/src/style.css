@@ -1,0 +1,47 @@
+element {
+  --green: #A3F7BF;
+  --blue: #29A19C;
+}
+
+body {
+  background-color: #222831;
+}
+
+form {
+  height: 100vh;
+  width: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 16pt;
+  font-family: 'Averia Serif Libre', cursive;
+}
+
+input:hover, input:focus, button:hover {
+  border-color: var(--green);
+  box-shadow: 0 0 5px var(--green);
+}
+
+input {
+  margin: 1.4rem 0;
+  padding: .5rem 1rem;
+  color: #29A19C;
+  border: 2px solid #A3F7BF;
+  background-color: #393E46;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+button {
+  width: 13rem;
+  align-self: center;
+  border-radius: 50px;
+  border: 2px solid #A3F7BF;
+  background-color: #29A19C;
+}
