@@ -1,15 +1,21 @@
-const webpack = require('webpack');
-const path = require('path');
-
-const config = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-    },
-};
-
-module.exports = {
-    mode: 'development'
-  };
-p
+// import webpack from 'webpack';
+//
+// const path = require('path');
+// const HtmlWebpackBannerPlugin = require('html-webpack-banner-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+//
+// module.exports = {
+//     entry: './src/index.js',
+//     output: {
+//         filename: 'main.js',
+//         path: path.resolve(__dirname, 'dist'),
+//     },
+//     plugins: [
+//         new webpack.AutomaticPrefetchPlugin(),
+//         new HtmlWebpackPlugin(),
+//         new HtmlWebpackBannerPlugin({
+//             banner: {
+//             },
+//         }),
+//     ],
+// };

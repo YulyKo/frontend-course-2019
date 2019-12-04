@@ -50,6 +50,8 @@
   "devDependencies": {
     "eslint": "^6.6.0",
     "husky": "^3.0.9",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }

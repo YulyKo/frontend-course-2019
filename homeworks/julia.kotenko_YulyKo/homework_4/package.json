@@ -1,20 +1,21 @@
 {
   "name": "homework_4",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
-    "lodash-es": "^4.17.15"
+    "banner-webpack-plugin": "^0.2.3",
+    "html-webpack-banner-plugin": "^2.0.0"
   }
 }
