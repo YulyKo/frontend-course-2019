@@ -1,52 +1,61 @@
-function getEmailValue() {
-    const email = document.querySelector('#email');
-    return email.value;
-}
+const NAME_FORMAT = /^[A-Za-z\s]+$/;
+const MAIL_FORMAT = /\S+@\S+\.\S+/;
 
-function getNameValue() {
-    const name = document.querySelector('#name');
-    return name.value;
-}
-
-function getMessageValue() {
-    const message = document.querySelector('#message');
-    return message.value;
-}
-
-function showResultMessage() {
-    const email = getEmailValue();
-    const name = getNameValue();
-    const message = getMessageValue();
-    alert(`User ${name}(${email})
-Your message: ${message} was sended to Jhon Smith`);
-}
-
-function validationName() {
-    const name = getNameValue();
-    if (/^[A-Za-z\s]+$/.test(name)) {
-        showResultMessage();
+class ContactMeForm {
+    initialization() {
+        this.form = document.querySelector('#form');
+        this.email = this.form.querySelector('#email');
+        this.name = this.form.querySelector('#name');
+        this.message = this.form.querySelector('#message');
+        this.form.addEventListener('submit', this.onSubmit.bind(this));
     }
-    alert('Your name is not correct written.\nRemove numbers and special symbols from input');
+
+    getEmailValue() {
+        return this.email.value;
+    }
+
+    getNameValue() {
+        return this.name.value;
+    }
+
+    getMessageValue() {
+        return this.message.value;
+    }
+
+    showResultMessage() {
+        const name = this.getNameValue();
+        const email = this.getEmailValue();
+        const message = this.getMessageValue();
+        alert(`User ${name}\n(${email})\nYour message: ${message} was sanded to John Smith`);
+    }
+
+    validateName() {
+        const name = this.getNameValue();
+        if (!NAME_FORMAT.test(name)) {
+            return 'Your name is not correct';
+        }
+        return '';
+    }
+
+    validateEmail() {
+        const email = this.getEmailValue();
+        if (!email.match((MAIL_FORMAT))) {
+            return 'You have problem with email';
+        }
+        return '';
+    }
+
+    onSubmit(event) {
+        event.preventDefault();
+        const validationEmailError = this.validateEmail();
+        const validationNameError = this.validateName();
+        if (validationEmailError !== '' || validationNameError !== '') {
+            alert(`${validationEmailError}\n${validationNameError}`);
+            return '';
+        }
+        return this.showResultMessage();
+    }
 }
 
-function validationOfEmail() {
-    const mailFormat = /\S+@\S+\.\S+/;
-    const email = getEmailValue();
-    const name = getNameValue();
-    if (email.match(mailFormat)) {
-        validationName(name);
-    }
-    alert('Your e-mail is not correct');
-}
-
-function onSubmit() {
-    const email = getMessageValue();
-    const name = getNameValue();
-    const message = getMessageValue();
-    if (!!email && !!name && !!message) {
-        validationOfEmail();
-    } else {
-        alert('It won\'t work that way.\nWrite information in all inputs');
-    }
-}
-document.querySelector('#submit').addEventListener('click', onSubmit);
+const contactMeForm = new ContactMeForm();
+contactMeForm.initialization();
