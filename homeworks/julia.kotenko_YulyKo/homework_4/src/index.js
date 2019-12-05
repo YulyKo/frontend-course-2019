@@ -16,11 +16,11 @@ function checkMessage() {
 
 function addCheckingClass(valid, element) {
     if (valid === false) {
-        element.add('error');
-        element.remove('success');
+        element.add('form_input--error');
+        element.remove('form_input--success');
     } else {
-        element.add('success');
-        element.remove('error');
+        element.add('form_input--success');
+        element.remove('form_input--error');
     }
 }
 
